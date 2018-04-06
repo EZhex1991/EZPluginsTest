@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/EZFloatingWindow/EZFloatingWindow.unity
+    path: Assets/Test/StreamingLoader.unity
+    guid: e6dab90cf49e47b41b29aa40a3da5243
+  - enabled: 1
+    path: Assets/Test/FloatingWindow.unity
     guid: f47d6a4560c33504594589dbc891c056

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace EZhex1991
 {
-    public class FloatingWindowTest : MonoBehaviour
+    public class FloatingWindow : MonoBehaviour
     {
         public Button button_GetPermission;
         public Button button_StartService;

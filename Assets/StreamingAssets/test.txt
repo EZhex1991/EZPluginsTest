@@ -1,0 +1,13 @@
+﻿--[==[
+Author:     #AUTHORNAME#
+CreateTime: #CREATETIME#
+Description:
+
+--]==]
+local M = { }
+M._modulename = ...
+M.__index = M
+----- begin module -----
+
+----- end -----
+return M
