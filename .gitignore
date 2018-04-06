@@ -1,4 +1,5 @@
 *.apk
+/apks
 
 /Library
 /Temp
