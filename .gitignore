@@ -1,6 +1,11 @@
+.vs
+*.sln
+*.csproj
+
 *.apk
 /apks
 
 /Library
 /Temp
 /UnityPackageManager
+ProjectSettings/EditorBuildSettings.asset
