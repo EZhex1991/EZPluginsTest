@@ -15,6 +15,8 @@ namespace EZhex1991
         public Button button_StopService;
         public Button button_ChangeBackground;
 
+        public Button button_ShowNavigator;
+
         public Texture2D[] textures;
         private int currentIndex = 0;
 
@@ -24,6 +26,8 @@ namespace EZhex1991
             button_StartService.onClick.AddListener(StartService);
             button_StopService.onClick.AddListener(StopService);
             button_ChangeBackground.onClick.AddListener(ChangeBackground);
+
+            button_ShowNavigator.onClick.AddListener(ShowNavigator);
         }
 
         private void Update()
@@ -51,6 +55,11 @@ namespace EZhex1991
             currentIndex++;
             currentIndex = currentIndex % textures.Length;
             EZFloatingWindow.SetBackground(textures[currentIndex].EncodeToPNG());
+        }
+
+        private void ShowNavigator()
+        {
+            EZLauncher.ShowNavigator();
         }
     }
 }
