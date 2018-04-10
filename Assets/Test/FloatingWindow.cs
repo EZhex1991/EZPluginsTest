@@ -28,11 +28,13 @@ namespace EZhex1991
             button_ChangeBackground.onClick.AddListener(ChangeBackground);
 
             button_ShowNavigator.onClick.AddListener(ShowNavigator);
+
+            EZFloatingWindow.onMoveEvent += (x, y) => EZFloatingWindow.SetText(string.Format("{0}, {1}", x, y));
         }
 
         private void Update()
         {
-            EZFloatingWindow.SetText(Time.time.ToString());
+            //EZFloatingWindow.SetText(Time.time.ToString());
         }
 
         private void GetPermission()

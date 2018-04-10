@@ -3,6 +3,7 @@
  * Orgnization:     #ORGNIZATION#
  * Description:     
  */
+using System;
 using UnityEngine;
 
 namespace EZhex1991
@@ -13,6 +14,7 @@ namespace EZhex1991
         private static AndroidJavaClass unityPlayer;
         private static AndroidJavaObject unityActivity;
 
+        private static FloatingWindowListener listener;
         private static AndroidJavaObject m_FloatingWindow;
         private static AndroidJavaObject floatingWindow
         {
@@ -28,12 +30,18 @@ namespace EZhex1991
         }
 #endif
 
+        public static event Action<int, int> onEnableEvent { add { listener.onConnectedEvent += value; } remove { listener.onConnectedEvent -= value; } }
+        public static event Action onDisableEvent { add { listener.onDisconnectedEvent += value; } remove { listener.onDisconnectedEvent -= value; } }
+        public static event Action<int, int> onMoveEvent { add { listener.onMoveEvent += value; } remove { listener.onMoveEvent -= value; } }
+        public static event Action onClickEvent { add { listener.onClickEvent += value; } remove { listener.onClickEvent -= value; } }
+
         static EZFloatingWindow()
         {
             unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
 
-            floatingWindow = new AndroidJavaObject("com.ezhex1991.ezfloatingwindow.FloatingWindow", unityActivity);
+            listener = new FloatingWindowListener();
+            floatingWindow = new AndroidJavaObject("com.ezhex1991.ezfloatingwindow.FloatingWindow", unityActivity, listener);
         }
 
         public static void GetPermission()

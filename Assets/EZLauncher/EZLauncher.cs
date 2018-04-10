@@ -26,7 +26,7 @@ namespace EZhex1991
 
         public static void ShowNavigator()
         {
-            launcher.Call("showNavigator");
+            launcher.Call<AndroidJavaObject>("showNavigator");
         }
     }
 }
